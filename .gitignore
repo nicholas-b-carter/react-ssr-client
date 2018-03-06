@@ -1,0 +1,6 @@
+node_modules
+build
+public/*
+!public/assets
+!public/favicon.ico
+!public/manifest.json
