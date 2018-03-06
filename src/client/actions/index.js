@@ -1,5 +1,3 @@
-import {patchXhr, setToken} from 'jwt-csrf/client'
-
 export const FETCH_EMPLOYEES = 'FETCH_EMPLOYEES'
 export const fetchEmployees = () => async (dispatch, getState, api) => {
   try {
@@ -33,9 +31,6 @@ export const fetchCurrentUser = () => async (dispatch, getState, api) => {
 export const FETCH_ADMINS = 'FETCH_ADMINS'
 export const fetchAdmins = () => async (dispatch, getState, api) => {
   const res = await api.get('/admins')
-
-  jwtCsrf.setToken(res.payload.data.csrfToken)
-  jwtCsrf.patchXhr()
 
   dispatch({
     type: FETCH_ADMINS,
